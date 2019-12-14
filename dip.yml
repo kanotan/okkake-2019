@@ -1,0 +1,53 @@
+version: '4'
+
+environment:
+  RAILS_ENV: development
+
+compose:
+  files:
+    - docker-compose.yml
+
+interaction:
+  sh:
+    description: Open the app container bash shell
+    service: app
+    command: /bin/bash
+
+  pry:
+    description: Open Rails console
+    service: app
+    command: ./bin/rails c
+
+  bundle:
+    description: Run Bundler commands
+    service: app
+    command: bundle
+
+  rake:
+    description: Run rakecommand
+    service: app
+    command: bundle exec rake
+
+  rspec:
+    description: Run Rspec commands
+    service: app
+    command: bundle exec rspec
+
+  rubocop:
+    description: Run Rubocop commands
+    service: app
+    command: bundle exec rubocop
+
+  yarn:
+    description: Run yarn command
+    service: app
+    command: yarn
+
+  psql:
+    description: Run psql console
+    service: postgres
+    command: psql -h postgres -U postgres
+
+provision:
+  - dip app clean
+  - dip bundle install
