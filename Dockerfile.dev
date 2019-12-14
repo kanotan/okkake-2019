@@ -1,0 +1,37 @@
+FROM ruby:2.6.5
+
+ENV LC_ALL=C.UTF-8
+
+RUN \
+  curl -sL https://deb.nodesource.com/setup_13.x | bash - && \
+  curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
+  echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list && \
+  curl -sS https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add - && \
+  echo "deb http://apt.postgresql.org/pub/repos/apt/ stretch-pgdg main" |  tee /etc/apt/sources.list.d/pgdg.list && \
+  apt-get update && \
+  apt-get install -y --no-install-recommends \
+      postgresql-client-11 \
+      nodejs \
+      yarn \
+      imagemagick && \
+  rm -rf /var/lib/apt/lists/*
+
+ENV TERRAFORM_VERSION=0.12.18
+RUN \
+  apt-get update && \
+  apt-get install -y --no-install-recommends \
+      unzip && \
+  rm -rf /var/lib/apt/lists/* && \
+  curl -fsL https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip > terraform_${TERRAFORM_VERSION}_linux_amd64.zip && \
+  unzip terraform_${TERRAFORM_VERSION}_linux_amd64.zip -d /usr/local/bin && \
+  rm -f terraform_${TERRAFORM_VERSION}_linux_amd64.zip
+
+ENV TERRAFORM_DOC_VERSION=0.3.0
+RUN \
+  curl -fsL https://github.com/segmentio/terraform-docs/releases/download/v0.3.0/terraform-docs_linux_amd64 > /usr/local/bin/terraform-docs && \
+  chmod a+x /usr/local/bin/terraform-docs
+
+ENV ASUME_ROLE_VERSION=0.3.2
+RUN \
+  curl -fsL https://github.com/remind101/assume-role/releases/download/0.3.2/assume-role-Linux > /usr/local/bin/assume-role && \
+  chmod a+x /usr/local/bin/assume-role
