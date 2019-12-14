@@ -1,0 +1,13 @@
+/.bundle
+/log/*
+/tmp/*
+!/log/.keep
+!/tmp/.keep
+/node_modules
+/yarn-error.log
+/public/assets
+.byebug_history
+/coverage
+/config/master.key
+/ops/secrets/keys
+/dic
