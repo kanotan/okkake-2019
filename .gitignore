@@ -5,7 +5,11 @@
 !/tmp/.keep
 /node_modules
 /yarn-error.log
+yarn-debug.log*
+.yarn-integrity
 /public/assets
+/public/packs
+/public/packs-test
 .byebug_history
 /coverage
 /config/master.key
