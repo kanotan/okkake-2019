@@ -17,6 +17,7 @@ gem 'turbolinks', '~> 5'
 
 group :development, :test do
   gem 'bullet'
+  gem 'factory_bot_rails'
   gem 'pry-byebug'
   gem 'pry-doc'
   gem 'pry-rails'
