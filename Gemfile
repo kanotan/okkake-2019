@@ -18,6 +18,7 @@ gem 'turbolinks', '~> 5'
 group :development, :test do
   gem 'bullet'
   gem 'factory_bot_rails'
+  gem 'faker'
   gem 'pry-byebug'
   gem 'pry-doc'
   gem 'pry-rails'
@@ -39,6 +40,7 @@ group :test do
   gem 'capybara', '>= 2.15'
   gem 'database_cleaner'
   gem 'selenium-webdriver'
+  gem 'shoulda-matchers'
   gem 'webdrivers'
   gem 'webmock'
 end
