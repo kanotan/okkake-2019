@@ -16,5 +16,15 @@ module Okkake
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
     config.time_zone = 'Tokyo'
+
+    config.generators do |g|
+      g.helper false
+      g.stylesheets false
+      g.javascripts false
+      g.view_specs false
+      g.helper_specs false
+      g.routing_specs false
+      g.system_tests false
+    end
   end
 end
