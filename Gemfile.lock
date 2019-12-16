@@ -263,6 +263,7 @@ DEPENDENCIES
   rubocop-rspec
   sass-rails (>= 6)
   selenium-webdriver
+  spring
   spring-watcher-listen (~> 2.0.0)
   turbolinks (~> 5)
   web-console (>= 3.3.0)
