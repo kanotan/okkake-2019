@@ -16,6 +16,7 @@ gem 'sass-rails', '>= 6'
 gem 'turbolinks', '~> 5'
 
 group :development, :test do
+  gem 'awesome_print'
   gem 'bullet'
   gem 'factory_bot_rails'
   gem 'faker'
