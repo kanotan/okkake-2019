@@ -16,6 +16,7 @@ gem 'sass-rails', '>= 6'
 gem 'turbolinks', '~> 5'
 
 group :development, :test do
+  gem 'bullet'
   gem 'pry-byebug'
   gem 'pry-doc'
   gem 'pry-rails'
