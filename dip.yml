@@ -33,10 +33,10 @@ interaction:
     service: app
     command: bundle exec rspec
 
-  rubocop:
+  cop:
     description: Run Rubocop commands
     service: app
-    command: bundle exec rubocop
+    command: ./bin/rubocop
 
   yarn:
     description: Run yarn command
