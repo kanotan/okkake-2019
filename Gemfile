@@ -16,7 +16,9 @@ gem 'sass-rails', '>= 6'
 gem 'turbolinks', '~> 5'
 
 group :development, :test do
-  gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'pry-byebug'
+  gem 'pry-doc'
+  gem 'pry-rails'
   gem 'rubocop', '~> 0.77.0', require: false
   gem 'rubocop-performance'
   gem 'rubocop-rspec', require: false
