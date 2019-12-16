@@ -31,7 +31,7 @@ interaction:
   rspec:
     description: Run Rspec commands
     service: app
-    command: bundle exec rspec
+    command: ./bin/rspec
 
   cop:
     description: Run Rubocop commands
