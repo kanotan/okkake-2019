@@ -1,0 +1,21 @@
+box: kanotan/rails-ci:2.6.5
+services:
+  - id: kanotan/postgres:11.6-postgis-3.0
+    env:
+      POSTGRES_PASSWORD: password
+
+build:
+  steps:
+    - bundle-install
+    - ? script
+      name: yarn
+      code: HOME=$WERCKER_CACHE_DIR/yarn ./bin/yarn
+    - ? script
+      name: rubocop
+      code: ./bin/rubocop
+    - ? script
+      name: db:reset
+      code: RAILS_ENV=test ./bin/rails db:reset
+    - ? script
+      name: rspec
+      code: COVERAGE=1 ./bin/rspec --format progress
