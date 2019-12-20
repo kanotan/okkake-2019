@@ -15,6 +15,10 @@ gem 'redis', '~> 4.0'
 gem 'sass-rails', '>= 6'
 gem 'turbolinks', '~> 5'
 
+group :production do
+  gem 'dotenv-rails'
+end
+
 group :development, :test do
   gem 'awesome_print'
   gem 'bullet'
