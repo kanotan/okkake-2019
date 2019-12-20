@@ -7,6 +7,7 @@ gem 'rails', '~> 6.0.2'
 
 gem 'activerecord-postgis-adapter'
 gem 'bootsnap', '>= 1.4.2', require: false
+gem 'hiredis'
 gem 'image_processing', '~> 1.2'
 gem 'jbuilder', '~> 2.7'
 gem 'pg', '~> 1.1.4'
