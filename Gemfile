@@ -48,3 +48,7 @@ group :test do
   gem 'webdrivers'
   gem 'webmock'
 end
+
+group :deployment do
+  gem 'itamae-secrets'
+end
