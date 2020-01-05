@@ -18,6 +18,7 @@ gem 'sidekiq'
 gem 'sidekiq-cron'
 gem 'sinatra', require: false
 gem 'turbolinks', '~> 5'
+gem 'whenever'
 
 group :production do
   gem 'dotenv-rails'
@@ -58,5 +59,9 @@ group :test do
 end
 
 group :deployment do
+  gem 'cap-ec2'
+  gem 'capistrano', require: false
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
   gem 'itamae-secrets'
 end

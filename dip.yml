@@ -33,6 +33,11 @@ interaction:
     service: app
     command: ./bin/rspec
 
+  cap:
+    description: Run Capistrano commands
+    service: app
+    command: ./bin/cap
+
   cop:
     description: Run Rubocop commands
     service: app
