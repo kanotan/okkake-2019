@@ -1,0 +1,11 @@
+:verbose: true
+:concurrency: <%= Integer(ENV['SIDEKIQ_CONCURRENCY'] || 4) %>
+:timeout: 300
+:strict: false
+:queues:
+  - [default, 1]
+  - [high, 3]
+production:
+  :verbose: false
+  :pidfile: ./tmp/pids/sidekiq.pid
+  :logfile: ./log/sidekiq.log
