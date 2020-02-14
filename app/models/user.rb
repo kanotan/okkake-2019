@@ -39,7 +39,12 @@ class User < ActiveRecord::Base
 
   enum provider: { twitter: 1, google: 2, facebook: 3 }
 
+  # devise_token_authで暗黙的に有効になってる部分を無視
   def confirmed_at
     created_at
+  end
+
+  # devise_token_authで暗黙的に有効になってる部分を無視
+  def encrypted_password
   end
 end
