@@ -10,6 +10,7 @@ yarn-debug.log*
 /public/assets
 /public/packs
 /public/packs-test
+/public/uploads
 .byebug_history
 /coverage
 /config/master.key

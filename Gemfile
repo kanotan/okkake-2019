@@ -14,6 +14,7 @@ gem 'pg', '~> 1.1.4'
 gem 'puma', '~> 4.1'
 gem 'redis', '~> 4.0'
 gem 'sass-rails', '>= 6'
+gem 'shrine'
 gem 'sidekiq'
 gem 'sidekiq-cron'
 gem 'sinatra', require: false

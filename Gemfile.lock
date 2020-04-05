@@ -999,6 +999,7 @@ GEM
     colorize (0.8.1)
     concurrent-ruby (1.1.6)
     connection_pool (2.2.2)
+    content_disposition (1.0.0)
     crack (0.4.3)
       safe_yaml (~> 1.0.0)
     crass (1.0.6)
@@ -1009,6 +1010,8 @@ GEM
     dotenv-rails (2.7.5)
       dotenv (= 2.7.5)
       railties (>= 3.2, < 6.1)
+    down (5.1.1)
+      addressable (~> 2.5)
     erubi (1.9.0)
     et-orbi (1.2.4)
       tzinfo
@@ -1180,6 +1183,9 @@ GEM
       rubyzip (>= 1.2.2)
     shoulda-matchers (4.3.0)
       activesupport (>= 4.2.0)
+    shrine (3.2.1)
+      content_disposition (~> 1.0)
+      down (~> 5.1)
     sidekiq (6.0.6)
       connection_pool (>= 2.2.2)
       rack (~> 2.0)
@@ -1286,6 +1292,7 @@ DEPENDENCIES
   sass-rails (>= 6)
   selenium-webdriver
   shoulda-matchers
+  shrine
   sidekiq
   sidekiq-cron
   simplecov
