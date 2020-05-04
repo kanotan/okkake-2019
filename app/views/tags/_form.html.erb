@@ -1,0 +1,25 @@
+<%= @tag = Tag.new %>
+
+<%= form_for(@tag) do |f| %>
+    <!--省略-->
+    <div class="field">
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </div>
+    <div class="field">
+      <%= f.label :alternate_name %>
+      <%= f.text_field :alternate_name %>
+    </div>
+    <div class="field">
+      <%= f.label :image_data %>
+      <% if @tag.cached_image_data.present? %>
+          <!--バリデーションに失敗した場合、ここで画像を表示する-->
+          <%= image_tag @tag.image_url %>
+      <% end %>
+      <%= f.hidden_field :image, value: @tag.cached_image_data %>
+      <%= f.file_field :image %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+<% end %>

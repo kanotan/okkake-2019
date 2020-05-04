@@ -8,6 +8,9 @@ Rails.application.routes.draw do
     token_validations: 'api/v1/auth/token_validations',
     omniauth_callbacks: 'api/v1/auth/omniauth_callbacks'
   }
+
+  resources :tags
+
   # Sidekiq
   mount Sidekiq::Web => '/sidekiq'
 end
