@@ -35,6 +35,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'rspec-rails'
   gem 'rubocop', '~> 0.77.0', require: false
+  gem 'rubocop-faker', require: false
   gem 'rubocop-performance'
   gem 'rubocop-rspec', require: false
 end
