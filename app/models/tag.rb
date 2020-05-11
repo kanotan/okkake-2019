@@ -14,5 +14,7 @@
 #  index_tags_on_name  (name) UNIQUE
 #
 class Tag < ApplicationRecord
+  has_many :works, dependent: :destroy, class_name: Tag::Work.name
+
   validates :name, presence: true, uniqueness: { case_sensitive: false }
 end

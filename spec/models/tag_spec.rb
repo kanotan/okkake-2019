@@ -16,6 +16,10 @@
 require 'rails_helper'
 
 RSpec.describe Tag, type: :model do
+  describe 'Associations' do
+    it { is_expected.to have_many(:works) }
+  end
+
   describe 'Attributes' do
     describe '#name' do
       it { is_expected.to validate_presence_of(:name) }
