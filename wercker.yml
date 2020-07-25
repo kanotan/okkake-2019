@@ -13,9 +13,11 @@ build:
     - ? script
       name: rubocop
       code: ./bin/rubocop
+    - rails-database-yml:
+      service: postgresql-docker
     - ? script
       name: db:reset
-      code: RAILS_ENV=test ./bin/rails db:reset
+      code: RAILS_ENV=test bundle exec rake db:schema:load
     - ? script
       name: rspec
       code: COVERAGE=1 ./bin/rspec --format progress
