@@ -30,6 +30,32 @@ class Tag
 
     belongs_to :tag, required: true
 
+    # Work Relations
+    has_many :anime_series, dependent: :destroy, class_name: Tag::Work::AnimeSeries.name,
+                            foreign_key: :tag_work_id
+    has_many :book_series, dependent: :destroy, class_name: Tag::Work::BookSeries.name,
+                           foreign_key: :tag_work_id
+    has_many :comic_stories, dependent: :destroy, class_name: Tag::Work::ComicStory.name,
+                             foreign_key: :tag_work_id
+    has_many :movie_series, dependent: :destroy, class_name: Tag::Work::MovieSeries.name,
+                            foreign_key: :tag_work_id
+    has_many :music_playlists, dependent: :destroy, class_name: Tag::Work::MusicPlaylist.name,
+                               foreign_key: :tag_work_id
+    has_many :music_recordings, dependent: :destroy, class_name: Tag::Work::MusicRecording.name,
+                                foreign_key: :tag_work_id
+    has_many :radio_drama_series, dependent: :destroy, class_name: Tag::Work::RadioDramaSeries.name,
+                                  foreign_key: :tag_work_id
+    has_many :radio_series, dependent: :destroy, class_name: Tag::Work::RadioSeries.name,
+                            foreign_key: :tag_work_id
+    has_many :streaming_series, dependent: :destroy, class_name: Tag::Work::StreamingSeries.name,
+                                foreign_key: :tag_work_id
+    has_many :tv_drama_series, dependent: :destroy, class_name: Tag::Work::TvDramaSeries.name,
+                               foreign_key: :tag_work_id
+    has_many :tv_series, dependent: :destroy, class_name: Tag::Work::TvSeries.name,
+                         foreign_key: :tag_work_id
+    has_many :video_game_series, dependent: :destroy, class_name: Tag::Work::VideoGameSeries.name,
+                                 foreign_key: :tag_work_id
+
     validates :slug, presence: true, uniqueness: { case_sensitive: false }
     validates :old_slug, uniqueness: { case_sensitive: false }, allow_blank: true
     validates :follows_count, presence: true

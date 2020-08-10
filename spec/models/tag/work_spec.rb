@@ -28,6 +28,20 @@ require 'rails_helper'
 RSpec.describe Tag::Work, type: :model do
   describe 'Associations' do
     it { is_expected.to belong_to(:tag) }
+
+    # Work Relations
+    it { is_expected.to have_many(:anime_series) }
+    it { is_expected.to have_many(:book_series) }
+    it { is_expected.to have_many(:comic_stories) }
+    it { is_expected.to have_many(:movie_series) }
+    it { is_expected.to have_many(:music_playlists) }
+    it { is_expected.to have_many(:music_recordings) }
+    it { is_expected.to have_many(:radio_drama_series) }
+    it { is_expected.to have_many(:radio_series) }
+    it { is_expected.to have_many(:streaming_series) }
+    it { is_expected.to have_many(:tv_drama_series) }
+    it { is_expected.to have_many(:tv_series) }
+    it { is_expected.to have_many(:video_game_series) }
   end
 
   describe 'Attributes' do
