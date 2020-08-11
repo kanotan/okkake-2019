@@ -1023,6 +1023,8 @@ GEM
       railties (>= 3.2, < 6.1)
     down (5.1.1)
       addressable (~> 2.5)
+    enumerize (2.3.1)
+      activesupport (>= 3.2)
     erubi (1.9.0)
     et-orbi (1.2.4)
       tzinfo
@@ -1321,6 +1323,7 @@ DEPENDENCIES
   devise
   devise_token_auth
   dotenv-rails
+  enumerize
   factory_bot_rails
   faker
   hiredis
