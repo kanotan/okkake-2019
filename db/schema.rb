@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_17_051837) do
+ActiveRecord::Schema.define(version: 2020_08_10_194044) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -144,6 +144,40 @@ ActiveRecord::Schema.define(version: 2020_05_17_051837) do
     t.index ["old_slug"], name: "index_tag_music_recordings_on_old_slug", unique: true
     t.index ["slug"], name: "index_tag_music_recordings_on_slug", unique: true
     t.index ["tag_work_id"], name: "index_tag_music_recordings_on_tag_work_id"
+  end
+
+  create_table "tag_people", force: :cascade do |t|
+    t.string "slug", null: false
+    t.string "old_slug"
+    t.string "in_language"
+    t.string "family_name"
+    t.string "given_name"
+    t.string "additional_name"
+    t.string "gender"
+    t.string "blood_type"
+    t.integer "birth_year"
+    t.integer "birth_month"
+    t.integer "birth_date"
+    t.integer "death_year"
+    t.integer "death_month"
+    t.integer "death_date"
+    t.string "birth_place"
+    t.string "death_place"
+    t.float "height"
+    t.float "weight"
+    t.float "bust"
+    t.float "waist"
+    t.float "hip"
+    t.float "shoe_size"
+    t.integer "follows_count", default: 0, null: false
+    t.integer "comments_count", default: 0, null: false
+    t.integer "trivias_count", default: 0, null: false
+    t.bigint "tag_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["old_slug"], name: "index_tag_people_on_old_slug", unique: true
+    t.index ["slug"], name: "index_tag_people_on_slug", unique: true
+    t.index ["tag_id"], name: "index_tag_people_on_tag_id"
   end
 
   create_table "tag_radio_drama_seasons", force: :cascade do |t|
@@ -374,6 +408,7 @@ ActiveRecord::Schema.define(version: 2020_05_17_051837) do
   add_foreign_key "tag_movies", "tag_movie_series"
   add_foreign_key "tag_music_playlists", "tag_works"
   add_foreign_key "tag_music_recordings", "tag_works"
+  add_foreign_key "tag_people", "tags"
   add_foreign_key "tag_radio_drama_seasons", "tag_radio_drama_series"
   add_foreign_key "tag_radio_drama_series", "tag_works"
   add_foreign_key "tag_radio_seasons", "tag_radio_series"
