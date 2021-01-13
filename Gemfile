@@ -7,6 +7,7 @@ gem 'rails', '~> 6.0.2'
 
 gem 'activerecord-postgis-adapter'
 gem 'bootsnap', '>= 1.4.2', require: false
+gem 'enumerize'
 gem 'hiredis'
 gem 'image_processing', '~> 1.2'
 gem 'jbuilder', '~> 2.7'
@@ -20,6 +21,11 @@ gem 'sidekiq-cron'
 gem 'sinatra', require: false
 gem 'turbolinks', '~> 5'
 gem 'whenever'
+
+gem 'devise'
+gem 'devise_token_auth'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-twitter'
 
 group :production do
   gem 'dotenv-rails'
@@ -35,6 +41,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'rspec-rails'
   gem 'rubocop', '~> 0.77.0', require: false
+  gem 'rubocop-faker', require: false
   gem 'rubocop-performance'
   gem 'rubocop-rspec', require: false
 end
