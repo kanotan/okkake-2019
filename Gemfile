@@ -21,6 +21,11 @@ gem 'sinatra', require: false
 gem 'turbolinks', '~> 5'
 gem 'whenever'
 
+gem 'devise'
+gem 'devise_token_auth'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-twitter'
+
 group :production do
   gem 'dotenv-rails'
 end
