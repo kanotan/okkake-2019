@@ -11,9 +11,6 @@ services:
       - data-bundle:/usr/local/bundle
       - data-node-modules:/opt/okkake/node_modules
       - ${HOME}/.aws:/root/.aws
-    command: ./bin/rails s -p 80 -b '0.0.0.0'
-    ports:
-      - 80:80
     links:
       - postgres
       - redis
@@ -23,19 +20,20 @@ services:
       REDIS_URL: redis://redis:6379/0
       CACHE_REDIS_URL: redis://redis:6379/1
       SESSION_REDIS_URL: redis://redis:6379/2
+      BINDING: 0.0.0.0
 
   web:
     <<: *app
-    command: ./bin/rails s -p 80 -b '0.0.0.0'
+    command: ./bin/rails s
     ports:
-      - 80:80
+      - 3000:3000
 
   worker:
     <<: *app
     command: ./bin/sidekiq
 
   postgres:
-    image: kanotan/postgres:11.6-postgis-3.0
+    image: kanotan/postgres:13.4-postgis-3.2
     volumes:
       - data-postgres:/var/lib/postgresql/data
     ports:

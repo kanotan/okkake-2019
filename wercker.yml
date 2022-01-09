@@ -1,15 +1,12 @@
-box: kanotan/rails-ci:2.6.5
+box: kanotan/rails-ci:3.1.0
 services:
-  - id: kanotan/postgres:11.6-postgis-3.0
+  - id: kanotan/postgres:13.4-postgis-3.2
     env:
       POSTGRES_PASSWORD: password
 
 build:
   steps:
     - bundle-install
-    - ? script
-      name: yarn
-      code: HOME=$WERCKER_CACHE_DIR/yarn ./bin/yarn
     - ? script
       name: rubocop
       code: ./bin/rubocop
