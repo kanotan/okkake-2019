@@ -8,9 +8,6 @@ build:
   steps:
     - bundle-install
     - ? script
-      name: yarn
-      code: HOME=$WERCKER_CACHE_DIR/yarn ./bin/yarn
-    - ? script
       name: rubocop
       code: ./bin/rubocop
     - rails-database-yml:

@@ -43,12 +43,6 @@ interaction:
     service: app
     command: ./bin/sidekiq
 
-  yarn:
-    description: Run Yarn commands
-    service: app
-    command: ./bin/yarn
-    compose_run_options: [no-deps]
-
   rspec:
     description: Run Rails tests
     service: app
@@ -98,5 +92,4 @@ provision:
   - dip compose down --volumes
   - dip compose up -d postgres redis
   - dip bundle install
-  - dip yarn install
   - dip rails db:setup
