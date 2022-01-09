@@ -20,12 +20,13 @@ services:
       REDIS_URL: redis://redis:6379/0
       CACHE_REDIS_URL: redis://redis:6379/1
       SESSION_REDIS_URL: redis://redis:6379/2
+      BINDING: 0.0.0.0
 
   web:
     <<: *app
-    command: ./bin/rails s -p 80 -b '0.0.0.0'
+    command: ./bin/rails s
     ports:
-      - 80:80
+      - 3000:3000
 
   worker:
     <<: *app
